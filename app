@@ -21,6 +21,9 @@ function initialize {
         echo "Unable to build project, please review log"
         exit 2
     fi
+
+    glib-compile-schemas /usr/share/glib-2.0/schemas/
+    gsettings set org.gtk.Settings.Debug enable-inspector-keybinding true
 }
 
 function test {
@@ -77,6 +80,7 @@ case $1 in
     ;;
 "run")
     initialize
+    sudo ninja install
     ./com.github.phase1geo.minder "${@:2}"
     ;;
 "debug")
