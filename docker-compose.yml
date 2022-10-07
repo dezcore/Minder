@@ -6,12 +6,20 @@ services:
     #command: echo "Hello world !"
     stdin_open: true # docker run -i
     tty: true        # docker run -t
+    working_dir: /Minder
     build:
       context: .
       dockerfile: ./Dockerfile
     volumes:
-       - /tmp/.X11-unix:/tmp/.X11-unix
+       - minder-db:/Minder/db #/tmp/.X11-unix:/tmp/.X11-unix
     environment:
       - DISPLAY=host.docker.internal:0
 
+volumes:
+  minder-db:
+
 #docker run -it --rm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=host.docker.internal:0 minder
+#docker compose run --rm minder
+#docker login -u YOUR-USER-NAME
+#docker tag getting-started YOUR-USER-NAME/getting-started
+#docker push YOUR-USER-NAME/getting-started
