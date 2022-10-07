@@ -10,8 +10,6 @@ WORKDIR /Minder
 COPY . .
 #CMD sudo ./app clean && sudo ./app run
 #libhandy-1-dev
-#docker run -it --rm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=host.docker.internal:0 minder
-
 
 
 

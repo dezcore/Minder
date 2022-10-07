@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  minder:
+    image: minder
+    build:
+      context: .
+      dockerfile: ./Dockerfile
