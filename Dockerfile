@@ -1,9 +1,10 @@
 # syntax=docker/dockerfile:1
-FROM minder-env
+FROM dez28/minder-env
 WORKDIR /Minder
 # install app
 COPY . .
-#CMD sudo ./app clean && sudo ./app run
+RUN sudo ./app clean
+#CMD sudo ./app run
 
 
 
